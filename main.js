@@ -37,11 +37,12 @@ const Calculator={
             showTextResult.innerText=Calculator.num;
             showTextResult.innerText+=el.target.dataset.value;
         }
-          if(splitResult[1]==="×"){
+          if(splitResult[1]==="*"){
+            console.log('Yes');
             Calculator.num=+splitResult[0] * (+splitResult[2]);
             showTextResult.innerText=Calculator.num;
             showTextResult.innerText+=el.target.dataset.value
-        }
+        }else console.log("no");
           if(splitResult[1]==="-"){
             Calculator.num=+splitResult[0] - (+splitResult[2]);
             showTextResult.innerText=Calculator.num;
@@ -84,3 +85,14 @@ const Calculator={
 // call the main function 
 Calculator.init();
  
+
+// Function to handle key press events
+function handleKeyPress(event) {
+  const keyCode = event.keyCode || event.which; // For cross-browser compatibility
+  const key = String.fromCharCode(keyCode); 
+  // console.log(keyCode);
+  console.log(key);
+}
+
+// Attach key press event listener to the entire document
+document.addEventListener("keypress", handleKeyPress);
