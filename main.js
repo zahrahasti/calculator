@@ -64,16 +64,15 @@ const Calculator={
     }
 
    ,changeTheme:function(e){
-    document.body.classList.remove("style-1")
-    document.body.classList.remove("style-2")
-    document.body.classList.remove("style-3")
-     if(e.target.value==="2"){
+    document.body.classList.remove("style-1","style-2","style-3");
+    console.log(this.min);
+     if(e.target.value===this.min){
       document.body.classList.add("style-1")
      }
      if(e.target.value==="7"){
       document.body.classList.add("style-2")
      }
-     if(e.target.value==="12"){
+     if(e.target.value===this.max){
       document.body.classList.add("style-3")
      }
       
