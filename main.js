@@ -87,12 +87,12 @@ Calculator.init();
  
 
 // Function to handle key press events
-function handleKeyPress(event) {
-  const keyCode = event.keyCode || event.which; // For cross-browser compatibility
-  const key = String.fromCharCode(keyCode); 
-  // console.log(keyCode);
-  console.log(key);
-}
+// function handleKeyPress(event) {
+//   const keyCode = event.keyCode || event.which; // For cross-browser compatibility
+//   const key = String.fromCharCode(keyCode); 
+//   // console.log(keyCode);
+//   console.log(key);
+// }
 
-// Attach key press event listener to the entire document
-document.addEventListener("keypress", handleKeyPress);
+// // Attach key press event listener to the entire document
+// document.addEventListener("keypress", handleKeyPress);
