@@ -1,11 +1,15 @@
 "use strict";
 
+
+// Get all elements 
 const keyPads=[...document.querySelectorAll("[data-value]")];
 const showTextResult=document.querySelector(".show-result");
 const btnReset=document.querySelector(".btn-reset");
 const btnTheme=document.querySelector(".btn-theme input");
 const box=document.querySelector(".btn-theme span")
 const btnDeleLastNum=document.querySelector(".btn-del")
+
+// Function to handle calculator
 const Calculator={
     x:0,
     num:0,
@@ -65,70 +69,18 @@ const Calculator={
 
    ,changeTheme:function(e){
     document.body.classList.remove("style-1","style-2","style-3");
-    console.log(this.min);
-     if(e.target.value===this.min){
-      document.body.classList.add("style-1")
-     }
-     if(e.target.value==="7"){
-      document.body.classList.add("style-2")
-     }
-     if(e.target.value===this.max){
-      document.body.classList.add("style-3")
-     }
-      
+     if(e.target.value===this.min)
+     document.body.classList.add("style-1")
+
+     if(+e.target.value===+this.min + (+ this.step))
+     document.body.classList.add("style-2")
+
+     if(e.target.value===this.max)
+     document.body.classList.add("style-3")
    }
    
 }
+
+// call the main function 
 Calculator.init();
-
-
  
-
-// btnTheme.ariaValueMin
-// 
-// const calc=document.querySelector(".calc");
-// const buttons=[...document.querySelectorAll("button")]
-// const result=document.querySelector(".result");
-// const assigns=["+","-","=","*","/"]
-// buttons.map(btn=>{
-//     btn.addEventListener("click",function(){
-//         // result.textContent="";
-//         let num=0;
-//         result.innerHTML+=this.dataset.target;
-//         const splitResult=result.textContent.match(/\d+(\.\d+)?|[+*=/-]/g);
-//         //Just work for positive numbers
-//         if(splitResult.length>=4&&splitResult[0]==="-"){
-//             splitResult.shift()
-//             console.log(splitResult);
-//             splitResult[0]=-splitResult[0];
-//             console.log(splitResult[0]);
-//         }
-//        if(splitResult.length>=4){
-//           console.log(splitResult);
-//           if(splitResult[1]==="+"){
-//             num=+splitResult[0]+(+splitResult[2])
-//             result.innerHTML=num;
-//             result.innerHTML+=this.dataset.target;
-//         }
-//           if(splitResult[1]==="*"){
-            
-//             num=+splitResult[0] * (+splitResult[2]);
-//             result.innerHTML=num;
-//             result.innerHTML+=this.dataset.target;
-//         }
-//           if(splitResult[1]==="-"){
-//             num=+splitResult[0] - (+splitResult[2]);
-//             result.innerHTML=num;
-//             result.innerHTML+=this.dataset.target;
-//         }
-//           if(splitResult[1]==="/"){
-//             num=+splitResult[0] / (+splitResult[2])
-//             result.innerHTML=num;
-//             result.innerHTML+=this.dataset.target;
-//         }
-           
-//        }
-      
-//     })
-// })
-
