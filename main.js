@@ -103,10 +103,10 @@ let calculationComponents=[];
 keyPads.map(key=>{
   key.addEventListener("click",checkValue)
 })
-btnEqual.addEventListener("click",()=>calc(textString));
+btnEqual.addEventListener("click",()=>calculate(textString));
 btnReset.addEventListener("click",resetText);
 btnDeleLastNum.addEventListener("click",delLastCharacter)
-
+btnTheme.addEventListener("change",changeTheme)
 
 function delLastCharacter(){
   showTextResult.textContent=showTextResult.textContent.slice(0,-1);
@@ -129,14 +129,29 @@ function checkValue(e){
 }
 
 
-function calc(string){
-        if(isNaN(textString.at(-1))){
-
-        }
+function calculate(string){
+       
+        if(isNaN(string.at(-1))){
+        document.querySelector(".format").classList.add("show")
+          }
         else{
-        showTextResult.textContent=`${eval(textString)}`;
-        textString=showTextResult.textContent;
+        showTextResult.textContent=`${eval(string)}`;
+        string=showTextResult.textContent;
         calculationComponents=[];
-        calculationComponents.push(textString);
+        calculationComponents.push(string);}
+        setTimeout(()=>document.querySelector(".format").classList.remove("show"),2000)
+
 }
+
+
+function changeTheme(e){
+       document.body.classList.remove("style-1","style-2","style-3");
+       if(e.target.value===this.min)
+       document.body.classList.add("style-1")
+  
+       if(+e.target.value===+this.min + (+ this.step))
+       document.body.classList.add("style-2")
+  
+       if(e.target.value===this.max)
+       document.body.classList.add("style-3")
 }
