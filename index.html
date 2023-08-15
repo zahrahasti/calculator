@@ -10,8 +10,7 @@
    <link rel="stylesheet" href="./style.css">
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+   
   </style>
   <script defer src="./main.js"></script>
 </head>
@@ -19,7 +18,7 @@
     <main class="main style-1">
       <section class="wrapper-top">
         <h3>
-          <strong>calc</strong>
+          <strong>Calculator</strong>
         </h3>
         <div class="text-sm container-theme">
           <p>THEME</p>
@@ -40,6 +39,7 @@
       <section>
           <div class="container-show-result rouned-sm">
             <h2 class="show-result"></h2>
+            <!-- <input type="text" class="show-result"> -->
           </div>
       </section>
       <section class="wrapper-calc rouned-sm">
@@ -58,16 +58,21 @@
          <button class="btn-key" data-value=".">.</button>
          <button class="btn-key" data-value="0">0</button>
          <button class="btn-key" data-value="/">/</button>
-         <button class="btn-key" data-value="×">×</button>
+         <button class="btn-key" data-value="*">x</button>
          <button class="btn-hover btn-reset">RESET</button>
-         <button class="btn-equel btn-hover" data-value="=">=</button>
+         <button class="btn-equel btn-hover">=
+          <div class="format">
+            <p>Invalid format used</p>
+          </div>
+          
+         </button>
       </section>
     </main>
    </div>
   
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Challenge by <a href="https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29" target="_blank">Frontend Mentor Challenge</a>. 
+    Coded by <a href="#">ZahraHasti</a>.
   </div>
 </body>
 </html>
