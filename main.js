@@ -98,45 +98,45 @@ const btnEqual=document.querySelector(".btn-equel");
 // document.addEventListener("keypress", handleKeyPress);
 
 // todo second way to calc
-let string;
-let nums=[];
+let textString;
+let calculationComponents=[];
 keyPads.map(key=>{
   key.addEventListener("click",checkValue)
 })
-btnEqual.addEventListener("click",()=>calc(string));
+btnEqual.addEventListener("click",()=>calc(textString));
 btnReset.addEventListener("click",resetText);
 btnDeleLastNum.addEventListener("click",delLastCharacter)
 
 
 function delLastCharacter(){
   showTextResult.textContent=showTextResult.textContent.slice(0,-1);
-  nums.pop()
-  string=string.slice(0,-1)
+  calculationComponents.pop()
+  textString=textString.slice(0,-1)
 }
 
 function resetText(){
-  nums=[];
+  calculationComponents=[];
   showTextResult.textContent="";
-  string="";
+  textString="";
 }
 
 function checkValue(e){
     const value=e.target.dataset.value;
     showTextResult.textContent+=value;
-    nums.push(value);
-   string=nums.join("");
+    calculationComponents.push(value);
+    textString=calculationComponents.join("");
   
 }
 
 
 function calc(string){
-        if(isNaN(string.at(-1))){
+        if(isNaN(textString.at(-1))){
 
         }
         else{
-        showTextResult.textContent=`${eval(string)}`;
-        string=showTextResult.textContent;
-        nums=[];
-        nums.push(string);
+        showTextResult.textContent=`${eval(textString)}`;
+        textString=showTextResult.textContent;
+        calculationComponents=[];
+        calculationComponents.push(textString);
 }
 }
