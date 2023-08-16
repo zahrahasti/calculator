@@ -132,7 +132,7 @@ function checkValue(e){
 
 
 function calculate(string){
-       
+        // if(!showTextResult.textContent)re
         if(isNaN(string.at(-1))){
         document.querySelector(".format").classList.add("show")
           }
