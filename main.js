@@ -22,7 +22,7 @@ btnTheme.addEventListener("change", changeTheme);
 
 // delete last charecter in show
 function delLastCharacter() {
-  showTextResult.textContent = showTextResult.textContent.slice(0, -1);
+   showTextResult.textContent = showTextResult.textContent.slice(0, -1);
   calculationComponents.pop();
   textString = textString.slice(0, -1);
 }
@@ -37,6 +37,8 @@ function delFirstChareacter(){
 
 // reset text
 function resetText() {
+
+
   calculationComponents = [];
   showTextResult.textContent = "";
   textString = "";
@@ -48,17 +50,14 @@ function checkValue(e) {
           sign.classList.remove("no-allow");
           calculationComponents.pop();
           textString = textString.slice(0, -1);
+        if(showTextResult.textContent){
           showTextResult.textContent=showTextResult.slice(0,-1)
-        if(showTextResult.textContent)delFirstChareacter()
+          delFirstChareacter()
+    }
     }})
 
 
 
-
-   if(showTextResult.textContent==="+")console.log("yes");
-    console.log(showTextResult.textContent);
-    console.log(showTextResult.textContent[0]);
- 
  
   if (!e.target.classList.contains("no-allow")) {
     const value = e.target.dataset.value;
@@ -114,4 +113,3 @@ function removeDuplicateMathSign(calculationComponents) {
   }
 }
 
- 
