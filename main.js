@@ -6,9 +6,9 @@ const keyPads=[...document.querySelectorAll("[data-value]")];
 const showTextResult=document.querySelector(".show-result");
 const btnReset=document.querySelector(".btn-reset");
 const btnTheme=document.querySelector(".btn-theme input");
-const box=document.querySelector(".btn-theme span")
 const btnDeleLastNum=document.querySelector(".btn-del")
 const btnEqual=document.querySelector(".btn-equel");
+const main=document.querySelector(".main")
 // Function to handle calculator
 // const Calculator={
 //     x:0,
@@ -121,11 +121,13 @@ function resetText(){
 }
 
 function checkValue(e){
+    if(!e.target.classList.contains("no-allow")){
     const value=e.target.dataset.value;
     showTextResult.textContent+=value;
     calculationComponents.push(value);
     textString=calculationComponents.join("");
-  
+    removeDuplicateMathSign(showTextResult.textContent)
+   }
 }
 
 
@@ -139,7 +141,7 @@ function calculate(string){
         string=showTextResult.textContent;
         calculationComponents=[];
         calculationComponents.push(string);}
-        setTimeout(()=>document.querySelector(".format").classList.remove("show"),2000)
+        setTimeout(()=>document.querySelector(".format").classList.remove("hide"),2000)
 
 }
 
@@ -147,11 +149,30 @@ function calculate(string){
 function changeTheme(e){
        document.body.classList.remove("style-1","style-2","style-3");
        if(e.target.value===this.min)
-       document.body.classList.add("style-1")
-  
+       document.body.classList.add("style-1","anim-opacity")  
        if(+e.target.value===+this.min + (+ this.step))
-       document.body.classList.add("style-2")
-  
+       document.body.classList.add("style-2","anim-opacity")
        if(e.target.value===this.max)
-       document.body.classList.add("style-3")
+       document.body.classList.add("style-3","anim-opacity")
+      
+}
+
+
+
+
+// find a solution to Hiw to user don`t enter + or - again after 
+function  removeDuplicateMathSign(calculationComponents){
+ const splitResult=calculationComponents.match(/\d+(\.\d+)?|[+*=/-]/g);
+ const consecutiveMathSigns = /(\d[+\-*/]{2,})/.test(calculationComponents);
+    let repeatDel=0;
+if (consecutiveMathSigns) {
+    document.querySelectorAll(".btn-sign").forEach(btn=>{
+      btn.classList.add("no-allow")
+      repeatDel++;
+       if(repeatDel===1) delLastCharacter()
+    })
+   
+} else {
+  document.querySelectorAll(".btn-sign").forEach(btn=>btn.classList.remove("no-allow"))
+}
 }
