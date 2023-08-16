@@ -249,7 +249,10 @@ body.style-1{
 .rouned-sm{
     border-radius:var(--round-sm);
 }
-
+.main .wrapper-calc .no-allow{
+    cursor:not-allowed !important;
+     opacity:.7;
+}
 
 /* formated text */
 .container-show-result h2{
