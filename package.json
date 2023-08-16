@@ -1,0 +1,23 @@
+{
+  "name": "calculator-app-main",
+  "version": "1.0.0",
+  "description": "To use the calculator, simply open the index.html file in your web browser.",
+  "main": "main.js",
+  "scripts": {
+    "prettier": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zahrahasti/calculator.git"
+  },
+  "keywords": [],
+  "author": "zahra NM",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zahrahasti/calculator/issues"
+  },
+  "homepage": "https://github.com/zahrahasti/calculator#readme",
+  "devDependencies": {
+    "prettier": "^3.0.2"
+  }
+}

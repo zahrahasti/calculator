@@ -1,13 +1,17 @@
 # Frontend Mentor - Calculator app
- ### Getting Started
+The Calculator App is a simple web-based calculator that allows users to perform basic arithmetic operations. It's designed to provide a convenient tool for performing calculations quickly and easily.
 
-To use the calculator, simply open the index.html file in your web browser.
+## Features
 
-### Features
+- Addition, subtraction, multiplication, and division operations.
+- Clear button to reset the calculator.
+- Responsive design for a seamless experience on different devices.
 
-- Basic arithmetic operations: addition, subtraction, multiplication, and division.
-- Clear button to reset the calculator display.
-- Keyboard support: You can also use your keyboard's number and operator keys to enter calculations.
+## Getting Started
+
+1. Clone the repository: `git clone https://github.com/your-username/calculator-app.git`
+2. Navigate to the project directory: `cd calculator-app`
+3. Open `index.html` in your web browser
 
 ### Usage
 

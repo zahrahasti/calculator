@@ -231,10 +231,10 @@ body.style-1{
     font-weight:400;
     border-radius:.4rem;
  }
-  .format.show{
+  .format.hide{
     display: block;
-    opacity:.8;
-    animation:show 2s ease-in forwards;
+    opacity:.9;
+    animation:hide 2s ease-in forwards;
  } 
  
 /* utilities */
@@ -298,9 +298,9 @@ main.main .btn-hover:hover::before
 
 /* keyframe and animation */
  
-@keyframes show {
+@keyframes hide {
     0%{
-        opacity:.7;
+        opacity:.9;
         display: block;
     }
     100%{
