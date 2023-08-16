@@ -30,15 +30,13 @@ function delLastCharacter() {
 
 // don`t allow to user to enter math sign as a first parameter
 function delFirstChareacter(){
-  showTextResult.textContent = showTextResult.textContent.slice(1);
-  calculationComponents.unshift();
-  textString = textString.slice(1);
+  showTextResult.textContent = showTextResult.textContent.slice(0,-3);
+  calculationComponents.pop();
+  textString = textString.slice(0,-3);
 }
 
 // reset text
 function resetText() {
-
-
   calculationComponents = [];
   showTextResult.textContent = "";
   textString = "";
@@ -47,13 +45,10 @@ function resetText() {
 function checkValue(e) {
    document.querySelectorAll(".btn-sign").forEach(sign=>{
     if(showTextResult.textContent===sign.dataset.value){
-          sign.classList.remove("no-allow");
-          calculationComponents.pop();
-          textString = textString.slice(0, -1);
-        if(showTextResult.textContent){
-          showTextResult.textContent=showTextResult.slice(0,-1)
+          sign.classList.add("no-allow");
+          console.log(textString,calculationComponents);
           delFirstChareacter()
-    }
+         
     }})
 
 
