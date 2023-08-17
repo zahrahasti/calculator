@@ -65,18 +65,18 @@ function checkValue(e) {
 
 // calulate
 function calculate(string) {
-  if (isNaN(string.at(-1))) {
-    document.querySelector(".format").classList.add("hide");
-  } else {
-    showTextResult.textContent = `${eval(string)}`;
+  if(eval(removeLeadingZeros(`${string}`))===Infinity){
+    errorText("Can`t divide by zero");
+    return;
+  }
+  if (isNaN(string.at(-1))) errorText("Invalid format used")
+   else {
+    showTextResult.textContent = `${eval(removeLeadingZeros(`${string}`))}`;
     string = showTextResult.textContent;
     calculationComponents = [];
     calculationComponents.push(string);
   }
-  setTimeout(
-    () => document.querySelector(".format").classList.remove("hide"),
-    2000,
-  );
+  
 }
 
 // change the theme for calulator
@@ -108,3 +108,21 @@ function removeDuplicateMathSign(calculationComponents) {
   }
 }
 
+
+function errorText(text){
+  document.querySelector(".format").classList.add("hide")
+  document.querySelector(".format").querySelector("p").textContent=text;     
+
+  setTimeout(
+    () => document.querySelector(".format").classList.remove("hide"),
+    2000,
+  );
+}
+
+
+function removeLeadingZeros(string) {
+  return string.replace(/\b0+(\d+)/g, '$1');
+}
+
+console.log(eval(removeLeadingZeros("12+05*04")));
+ 
