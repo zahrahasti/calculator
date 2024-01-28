@@ -1,6 +1,7 @@
 # Frontend Mentor - Calculator app
 The Calculator App is a simple web-based calculator that allows users to perform basic arithmetic operations. It's designed to provide a convenient tool for performing calculations quickly and easily.
-
+ 
+ ![a beautiful calculator](https://res.cloudinary.com/dz209s6jk/image/upload/v1652199545/Challenges/xye51b9no1nkpuonov8r.jpg)
 ## Features
 
 - Addition, subtraction, multiplication, and division operations.
