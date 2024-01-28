@@ -8,12 +8,20 @@ const btnTheme = document.querySelector(".btn-theme input");
 const btnDeleLastNum = document.querySelector(".btn-del");
 const btnEqual = document.querySelector(".btn-equel");
 const main = document.querySelector(".main");
-
+const btnSigns=document.querySelectorAll(".btn-sign");
 let textString;
 let calculationComponents = [];
 keyPads.map((key) => {
   key.addEventListener("click", checkValue);
 });
+window.addEventListener("keypress",function(e){
+console.log(e);
+  if(!isNaN(e.key) && e.code!=="Space")showTextResult.textContent+=`${eval(removeLeadingZeros(`${e.key}`))}`;
+   btnSigns.forEach(btn=>btn.classList.remove("no-allow"));
+   calculationComponents.push(e.key);
+   textString=calculationComponents.join("");
+   removeDuplicateMathSign(showTextResult.textContent)
+})
 btnEqual.addEventListener("click", () => calculate(textString));
 btnReset.addEventListener("click", resetText);
 btnDeleLastNum.addEventListener("click", delLastCharacter);
@@ -24,6 +32,7 @@ btnTheme.addEventListener("change", changeTheme);
 function delLastCharacter() {
    showTextResult.textContent = showTextResult.textContent.slice(0, -1);
   calculationComponents.pop();
+  if(textString)
   textString = textString.slice(0, -1);
 }
 
@@ -43,7 +52,7 @@ function resetText() {
 }
 
 function checkValue(e) {
-   document.querySelectorAll(".btn-sign").forEach(sign=>{
+   btnSigns.forEach(sign=>{
     if(showTextResult.textContent===sign.dataset.value){
           sign.classList.add("no-allow");
           console.log(textString,calculationComponents);
@@ -92,7 +101,6 @@ function changeTheme(e) {
 
 // find a solution to Hiw to user don`t enter + or - again after
 function removeDuplicateMathSign(calculationComponents) {
-  const splitResult = calculationComponents.match(/\d+(\.\d+)?|[+*=/-]/g);
   const consecutiveMathSigns = /(\d[+\-*/]{2,})/.test(calculationComponents);
   let repeatDel = 0;
   if (consecutiveMathSigns) {
@@ -107,13 +115,13 @@ function removeDuplicateMathSign(calculationComponents) {
       .forEach((btn) => btn.classList.remove("no-allow"));
   }
 }
-
+ 
 
 function errorText(text){
   document.querySelector(".format").classList.add("hide")
   document.querySelector(".format").querySelector("p").textContent=text;     
 
-  setTimeout(
+ setTimeout(
     () => document.querySelector(".format").classList.remove("hide"),
     2000,
   );
@@ -124,5 +132,4 @@ function removeLeadingZeros(string) {
   return string.replace(/\b0+(\d+)/g, '$1');
 }
 
-console.log(eval(removeLeadingZeros("12+05*04")));
  
