@@ -1,20 +1,19 @@
 "use strict";
-import { errorText } from "./errorText.js";
-import { removeLeadingZeros } from "./removeLeadingZeros.js";
-import {removeDuplicateMathSign} from "./removeDuplicateMathSign.js";
-import { changeTheme } from "./changeTheme.js";
+import { errorText } from "./scripts/errorText.js";
+import { removeLeadingZeros } from "./scripts/removeLeadingZeros.js";
+import {removeDuplicateMathSign} from "./scripts/removeDuplicateMathSign.js";
+import { changeTheme } from "./scripts/changeTheme.js";
 // Get all elements
-const keyPads = [...document.querySelectorAll("[data-value]")];
+const keyPads = document.querySelectorAll("[data-value]");
 const showTextResult = document.querySelector(".show-result");
 const btnReset = document.querySelector(".btn-reset");
 const btnTheme = document.querySelector(".btn-theme input");
 const btnDeleLastNum = document.querySelector(".btn-del");
 const btnEqual = document.querySelector(".btn-equel");
-const main = document.querySelector(".main");
 const btnSigns=document.querySelectorAll(".btn-sign");
 let textString;
 let calculationComponents = [];
-keyPads.map((key) => {
+keyPads.forEach((key) => {
   key.addEventListener("click", checkValue);
 });
 window.addEventListener("keypress",function(e){
@@ -61,10 +60,6 @@ function checkValue(e) {
           delFirstChareacter()
          
     }})
-
-
-
- 
   if (!e.target.classList.contains("no-allow")) {
     const value = e.target.dataset.value;
     showTextResult.textContent += value;
