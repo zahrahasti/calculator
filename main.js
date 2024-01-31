@@ -1,5 +1,8 @@
 "use strict";
-
+import { errorText } from "./errorText.js";
+import { removeLeadingZeros } from "./removeLeadingZeros.js";
+import {removeDuplicateMathSign} from "./removeDuplicateMathSign.js";
+import { changeTheme } from "./changeTheme.js";
 // Get all elements
 const keyPads = [...document.querySelectorAll("[data-value]")];
 const showTextResult = document.querySelector(".show-result");
@@ -15,7 +18,6 @@ keyPads.map((key) => {
   key.addEventListener("click", checkValue);
 });
 window.addEventListener("keypress",function(e){
-console.log(e);
   if(!isNaN(e.key) && e.code!=="Space")showTextResult.textContent+=`${eval(removeLeadingZeros(`${e.key}`))}`;
    btnSigns.forEach(btn=>btn.classList.remove("no-allow"));
    calculationComponents.push(e.key);
@@ -85,51 +87,6 @@ function calculate(string) {
     calculationComponents = [];
     calculationComponents.push(string);
   }
-  
-}
-
-// change the theme for calulator
-function changeTheme(e) {
-  document.body.classList.remove("style-1", "style-2", "style-3");
-  if (e.target.value === this.min)
-    document.body.classList.add("style-1", "anim-opacity");
-  if (+e.target.value === +this.min + +this.step)
-    document.body.classList.add("style-2", "anim-opacity");
-  if (e.target.value === this.max)
-    document.body.classList.add("style-3", "anim-opacity");
-}
-
-// find a solution to Hiw to user don`t enter + or - again after
-function removeDuplicateMathSign(calculationComponents) {
-  const consecutiveMathSigns = /(\d[+\-*/]{2,})/.test(calculationComponents);
-  let repeatDel = 0;
-  if (consecutiveMathSigns) {
-    document.querySelectorAll(".btn-sign").forEach((btn) => {
-      btn.classList.add("no-allow");
-      repeatDel++;
-      if (repeatDel === 1) delLastCharacter();
-    });
-  } else {
-    document
-      .querySelectorAll(".btn-sign")
-      .forEach((btn) => btn.classList.remove("no-allow"));
-  }
 }
  
-
-function errorText(text){
-  document.querySelector(".format").classList.add("hide")
-  document.querySelector(".format").querySelector("p").textContent=text;     
-
- setTimeout(
-    () => document.querySelector(".format").classList.remove("hide"),
-    2000,
-  );
-}
-
-
-function removeLeadingZeros(string) {
-  return string.replace(/\b0+(\d+)/g, '$1');
-}
-
  
