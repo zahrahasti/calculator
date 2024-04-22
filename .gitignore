@@ -1,17 +1,24 @@
-# Avoid accidental upload of the Sketch and Figma design files
-#####################################################
-## Please do not remove lines 5 and 6 - thanks! 🙂 ##
-#####################################################
-*.sketch
-*.fig
+# build output
+dist/
 
-# Avoid accidental XD upload if you convert the design file
-###############################################
-## Please do not remove line 12 - thanks! 🙂 ##
-###############################################
-*.xd
+# generated types
+.astro/
 
-# Avoid your project being littered with annoying .DS_Store files!
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
 .DS_Store
-.prettierignore
-./design/*.jpg
+
+# jetbrains setting folder
+.idea/

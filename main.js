@@ -56,8 +56,7 @@ function checkValue(e) {
    btnSigns.forEach(sign=>{
     if(showTextResult.textContent===sign.dataset.value){
           sign.classList.add("no-allow");
-          console.log(textString,calculationComponents);
-          delFirstChareacter()
+           delFirstChareacter()
          
     }})
   if (!e.target.classList.contains("no-allow")) {

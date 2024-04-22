@@ -1,0 +1,27 @@
+
+
+.main{
+    width:30%;
+    margin:0 auto;
+    padding:2rem 0;
+   
+}
+
+
+.wrapper-calc button{
+    font-size:2.5rem;
+    padding:.6rem 0;
+    border-radius:.7rem;
+    flex:1 1 20%;
+    border:none;
+    border-bottom:4px solid var(--key-num-shadow);
+    background:var(--key-num);
+    font-weight:700;
+    position: relative;
+    overflow: hidden;
+    outline:none;
+    cursor: pointer;
+    transition:transform .4s;
+    color:var(--key-color);
+    transition:all .3s;
+}

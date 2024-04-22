@@ -1,0 +1,67 @@
+
+
+.flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.text-sm{
+    font-size:1rem;
+}
+.rouned-sm{
+    border-radius:var(--round-sm);
+}
+.main .wrapper-calc .no-allow{
+    cursor:not-allowed !important;
+     opacity:.7;
+}
+.style-1{
+    --bg-page: hsl(222, 26%, 31%);
+    --dark-bg:hsl(224, 36%, 15%);
+    --medium-bg:hsl(223, 31%, 20%);
+    --btn-keypad:hsl(225, 21%, 49%);
+    --shadow-btn:hsl(224, 28%, 35%);
+    --btn-equel: hsl(6, 63%, 50%);
+    --shadow-toggle-equel:hsl(6, 70%, 34%);
+    --key-num: hsl(30, 25%, 89%);
+    --key-num-shadow:hsl(28, 16%, 65%);
+    --key-color: hsl(221, 14%, 31%);
+    --base:#fff;
+    --base-text-equal:#fff;
+    --show-text:#fff;
+    --key-hover:#fff;
+}
+
+.style-2{
+    --bg-page:hsl(0, 0%, 90%);
+    --dark-bg:hsl(0, 0%, 93%);
+    --medium-bg:hsl(0, 5%, 81%);
+    --btn-keypad:hsl(185, 42%, 37%);
+    --shadow-btn:hsl(185, 58%, 25%);
+    --btn-equel: hsl(25, 98%, 40%);
+    --shadow-toggle-equel:hsl(25, 99%, 27%);
+    --key-num: hsl(30, 25%, 89%);
+    --key-num-shadow:hsl(28, 16%, 65%);
+    --key-color: hsl(60, 10%, 19%);
+    --base:hsl(60, 10%, 19%);
+    --base-text-equal:#fff;
+    --show-text:hsl(60, 10%, 19%);
+    --key-hover:#fff;
+}
+ 
+.style-3{
+    --bg-page: hsl(268, 75%, 9%);
+    --dark-bg:  hsl(268, 71%, 12%);
+    --medium-bg:hsl(268, 71%, 12%);
+    --btn-keypad:  hsl(281, 89%, 26%);
+    --shadow-btn: hsl(285, 91%, 52%);
+    --btn-equel: hsl(176, 100%, 44%);
+    --shadow-toggle-equel:hsl(177, 92%, 70%);
+    --key-num:   hsl(268, 47%, 21%);
+    --key-num-shadow:hsl(290, 70%, 36%);
+    --key-color: hsl(52, 100%, 62%);
+    --base:hsl(52, 100%, 62%);
+    --base-text-equal:hsl(198, 20%, 13%);
+    --show-text:hsl(52, 100%, 62%);
+    --key-hover:hsl(281, 89%, 26%);
+}

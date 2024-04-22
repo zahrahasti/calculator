@@ -1,23 +1,17 @@
 {
-  "name": "calculator-app-main",
-  "version": "1.0.0",
-  "description": "To use the calculator, simply open the index.html file in your web browser.",
-  "main": "main.js",
+  "name": "",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "prettier": ""
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zahrahasti/calculator.git"
-  },
-  "keywords": [],
-  "author": "zahra NM",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/zahrahasti/calculator/issues"
-  },
-  "homepage": "https://github.com/zahrahasti/calculator#readme",
-  "devDependencies": {
-    "prettier": "^3.0.2"
+  "dependencies": {
+    "astro": "^4.6.3",
+    "@astrojs/check": "^0.5.10",
+    "typescript": "^5.4.5"
   }
 }
