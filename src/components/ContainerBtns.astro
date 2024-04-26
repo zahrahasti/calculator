@@ -1,0 +1,69 @@
+
+
+---
+ import IncorrectFormat from "./IncorrectFormat.astro"
+import KeyBtn from "./KeyBtn.astro";
+ 
+---
+<script>
+ 
+  import { DomElements } from "@ts/domEl";
+import type { formatDiagnostic } from "typescript";
+  import {delLastCharacter} from "@modules/delLastCharacter";
+   import {checkValue} from "@modules/checkValue";
+  import {calculate} from "@modules/calculate";
+  import {resetText} from "@modules/resetText";
+  let copy=""
+  let {showTextResult,btnEqual,keyPads,btnReset,btnDeleLastNum}=DomElements;
+  btnReset.addEventListener("click", resetText);
+  btnDeleLastNum.addEventListener("click", delLastCharacter);
+    keyPads.forEach((key) => {
+    key.addEventListener("click",function(e:Event){ 
+      checkValue(e)
+    if(copy!==null)
+      copy=showTextResult.textContent
+     }
+    );
+     
+  });
+  btnEqual.addEventListener("click", () => calculate(copy));
+  
+  </script>
+
+  <style>
+      
+ .wrapper-calc{
+   display: flex;
+   flex-wrap: wrap;
+   padding:2rem;
+   background:var(--medium-bg);
+   gap:1.5rem;
+   width: 100%;
+}
+
+
+  </style>
+<section class="wrapper-calc rouned-sm">
+  <KeyBtn dataValue={7}/>
+  <KeyBtn dataValue={8}/>
+  <KeyBtn dataValue={9}/>
+    <button class="base-btn-class btn-hover btn-del">DEL</button>
+    <KeyBtn dataValue={4}/>
+    <KeyBtn dataValue={5}/>
+    <KeyBtn dataValue={6}/>
+    <button class="base-btn-class btn-key btn-sign no-allow" data-value="+">+</button>
+    <KeyBtn dataValue={1}/>
+    <KeyBtn dataValue={2}/>
+    <KeyBtn dataValue={3}/>
+    <button class="base-btn-class btn-key btn-sign no-allow" data-value="-">-</button>
+    <KeyBtn dataValue={"."}/>
+    <KeyBtn dataValue={0}/>
+    <button class="base-btn-class btn-key btn-sign no-allow" data-value="/">/</button>
+    <button class="base-btn-class btn-key btn-sign no-allow" data-value="*">x</button>
+    <button class="base-btn-class btn-hover btn-reset">RESET</button>
+    <button class="base-btn-class btn-equel btn-hover">
+      =
+       <IncorrectFormat/>
+ 
+    </button>
+  </section>

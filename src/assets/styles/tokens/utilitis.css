@@ -1,5 +1,10 @@
 
-
+.w-full{
+    width: 100%;
+}
+.h-full{
+    height: 100%;
+}
 .flex-center{
     display: flex;
     align-items: center;

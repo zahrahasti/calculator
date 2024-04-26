@@ -2,64 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&family=Poppins:ital,wght@0,400;0,800;1,400;1,700;1,800&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Rubik:wght@300;400;500&display=swap');
 
 @import "./layers/layers.css";
-/* base style */
-
-
-.show-result{
-    height:3rem;
-}
-
-/* container tags */
-.wrapper-top{
-    display: flex;
-    align-items: center;
-    justify-content:space-between;
-    margin-bottom:1.8rem;
-    color:var(--base);
-}
-
-.container-theme{
-     display: flex;
-     align-items: flex-end;
-     gap:0 2.5rem;
-    
-}
-
-.container-show-result{
-    width: 100%;
-    background:var(--dark-bg);
-    padding:2rem;
-    margin-bottom:1.5rem;
-}
-.container-theme p{
-    height: 100%;
-     
-}
-.container-theme-num{
-    display: flex;
-    gap:1.5rem;
-    margin-right:.5rem;
-    margin-bottom:.5rem;
-  
-}
-.container-theme-control{
-    background:var(--medium-bg);
-    border:2px solid var(--medium-bg);
-    display: flex; 
-     padding:.3rem;
-    border-radius:1rem;
-    align-items: center;
-}
-.wrapper-calc{
-    display: flex;
-    flex-wrap: wrap;
-    padding:2rem;
-    background:var(--medium-bg);
-    gap:1.5rem;
-    width: 100%;
-}
-
-/* style button */
+@import "./tokens/tokens.css" ;
+ 
+ 
 .btn-theme{
     cursor: pointer;
     width: 100%;
@@ -99,48 +44,9 @@
         outline:none;
     }
 
-.wrapper-calc button:active{
-         transform:scale(.98) translateY(.5rem);
-    }
-    
-.wrapper-calc button.btn-key:hover{
-        background:var(--key-hover);
-    }
-.wrapper-calc button.btn-del,.wrapper-calc button.btn-reset{
-        background:var(--btn-keypad);
-        color:#fff;
-        font-size:1.8rem;
-        border-bottom:4px solid var(--shadow-btn);
-    }
-.wrapper-calc button.btn-equel{
-        background:var(--btn-equel);
-        color:var(--base-text-equal);
-        border-bottom:4px solid var(--shadow-toggle-equel);
-        position: relative;
-        overflow: visible;
-    }
 
- .format{
-    position: absolute;
-    top:-1rem;
-    background:var(--medium-bg);
-    color:var(--base);
-    opacity:0;
-    display: none;
-    transition:.3s all;
-    right:calc(100% - 2rem);
-    width:max-content;
-    font-size:1.4rem;
-    padding:.5rem .7rem;
-    z-index:10;
-    font-weight:400;
-    border-radius:.4rem;
- }
-  .format.hide{
-    display: block;
-    opacity:.9;
-    animation:hide 2s ease-in forwards;
- } 
+
+ 
  
 /* utilities */
 

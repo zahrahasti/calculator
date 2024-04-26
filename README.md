@@ -1,54 +1,103 @@
-# Astro Starter Kit: Basics
+
+<h1>Frontend Mentor - Calculator app</h1>
+
+<blockquote>
+   <p>
+      The Calculator App is a simple web-based calculator that allows users to perform basic arithmetic operations. It's designed to provide a convenient tool for performing calculations quickly and easily.
+   </p>
+</blockquote>
+
+<figure>
+   <img src="https://res.cloudinary.com/dz209s6jk/image/upload/v1652199545/Challenges/xye51b9no1nkpuonov8r.jpg" alt="Calculator app" />
+</figure>
+
+<h2>Overview</h2>
+<h3>The challenge</h3>
+<p>Users should be able to:</p>
+<ul>
+   <li>view the optimal layout for the site depending on their device's screen size;</li>
+   <li> The calculator will display the result of the calculations in real-time.</li>
+   <li> To reset the calculator, click the reset button</li>
+</ul>
+
+<h3>Links</h3>
+<ul>
+   <li>
+      <a href="https://calculator-frontendmentor-zahtahasti.netlify.app">Project homepage</a>
+   </li>
+   <li>
+      <a href="https://github.com/zahrahasti/calculator">GitHub repository</a>
+   </li>
+   <li>
+      <a href="https://github.com/zahrahasti/calculator/issues">Issues</a>
+   </li>
+   <li>
+      <a href="https://github.com/zahrahasti/calculator/pulls">Pull requests</a>
+   </li>
+   <li>
+      <a href=https://github.com/zahrahasti/?tab=repositories">My other projects</a>
+   </li>
+</ul>
+
+<h2>My process</h2>
+<h3>Built with:</h3>
+<ul>
+   <li>Semantic HTML</li>
+   <li>Modern Vanilla CSS</li>
+   <li>
+      <a href="https://www.typescriptlang.org">TypeScript</a>
+   </li>
+   <li>
+      <a href="https://astro.build">Astro</a> - JavaScript Framework
+   </li>
+</ul>
+
+<h3>I learned how to:</h3>
+
+- utilize TypeScript to add basic typing annotations;
+- leverage Astro for static site generation (SSG) and deploy it on <a href="https://pages.github.com">GitHub Pages</a>;
+- customize `<input type="range" />` to have a consistent appearance across all major browsers;
+- benefit modern Vanilla CSS features such as nesting, custom media queries, media query ranges, and cascade layers using <a href="https://lightningcss.dev">Lightning CSS</a>;
+- receive an image from the user through drag & drop or the prompt widnow; then, preview it on the page;
+- apply CSS filters, rotations, and flips on an image;
+- draw a canvas based on an image and let the user download it as a new image file.
+
+<h2>Development setup</h2>
+<p>1. First, you need to clone the project:</p>
 
 ```sh
-npm create astro@latest -- --template basics
+git clone -b master https://github.com/zahrahasti/calculator.git
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+<p>
+   Alternatively, you can copy the source of the project directly to your local environment using <a href="https://github.com/Rich-Harris/degit">Degit</a>:
+</p>
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+```sh
+npm i -g degit
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+degit https://github.com/zahrahasti/calculator.git new-project-folder
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+<p>2. Then, install required packages:</p>
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```sh
+npm i
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+<p>3. Finally, run the <code>dev</code> script to start the dev server and locally preview the project in development mode:</p>
 
-## 🧞 Commands
+```sh
+npm run dev
+```
 
-All commands are run from the root of the project, from a terminal:
+<h2>Deployment and production</h2>
+<p>Before deploying the project or creating a new pull request, run the following commands and make sure there are no errors:</p>
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+```sh
+npm run format
 
-## 👀 Want to learn more?
+npm run build
+```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+ 

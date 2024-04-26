@@ -6,9 +6,7 @@
     padding:2rem 0;
    
 }
-
-
-.wrapper-calc button{
+.base-btn-class{
     font-size:2.5rem;
     padding:.6rem 0;
     border-radius:.7rem;
@@ -25,3 +23,26 @@
     color:var(--key-color);
     transition:all .3s;
 }
+
+.btn-del, .btn-reset{
+    background:var(--btn-keypad);
+    color:#fff;
+    font-size:1.8rem;
+    border-bottom:4px solid var(--shadow-btn);
+}
+.btn-equel{
+    background:var(--btn-equel);
+    color:var(--base-text-equal);
+    border-bottom:4px solid var(--shadow-toggle-equel);
+    position: relative;
+    overflow: visible;
+}
+
+.base-btn-class:active{
+    transform:scale(.98) translateY(.5rem);
+}
+
+.btn-key:hover{
+   background:var(--key-hover);
+}
+ 
