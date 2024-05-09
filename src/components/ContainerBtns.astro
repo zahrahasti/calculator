@@ -13,20 +13,17 @@ import type { formatDiagnostic } from "typescript";
    import {checkValue} from "@modules/checkValue";
   import {calculate} from "@modules/calculate";
   import {resetText} from "@modules/resetText";
-  let copy=""
   let {showTextResult,btnEqual,keyPads,btnReset,btnDeleLastNum}=DomElements;
   btnReset.addEventListener("click", resetText);
   btnDeleLastNum.addEventListener("click", delLastCharacter);
     keyPads.forEach((key) => {
     key.addEventListener("click",function(e:Event){ 
       checkValue(e)
-    if(copy!==null)
-      copy=showTextResult.textContent
      }
     );
      
   });
-  btnEqual.addEventListener("click", () => calculate(copy));
+  btnEqual.addEventListener("click", () => calculate(showTextResult.textContent||""));
   
   </script>
 

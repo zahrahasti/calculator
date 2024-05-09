@@ -1,0 +1,31 @@
+@media (max-width:1200px) {
+    .main{
+        width:35%;
+    }
+}
+@media (max-width:900px) {
+    html{
+        font-size:64.5%;
+    }
+    .main{
+        width: 40%;
+    }
+}
+@media (max-width:760px) {
+    .main{
+        width:70%;
+    }
+    .wrapper-top .text-sm{
+        font-size:1.3rem;
+    }
+}
+@media (max-width:540px) {
+    .main{
+        width:90%;
+    }
+    .main .wrapper-calc .btn-key:not(.btn-hover){
+        aspect-ratio:1/1.1;
+    }
+}
+
+ 

@@ -3,7 +3,6 @@
 import {delFirstChareacter} from "@modules/delFirstChareacter"
 import { DomElements } from "@ts/domEl";
 let {btnSigns,showTextResult,calculationComponents,textString}=DomElements;
-let copyTextString=""
 import {removeDuplicateMathSign} from "@modules/removeDuplicateMathSign"
 function checkValue(e:Event) {
     btnSigns.forEach(sign=>{

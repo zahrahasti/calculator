@@ -41,20 +41,4 @@
         --key-hover:#fff;
     }
     
-    .style-2{
-        --bg-page:hsl(0, 0%, 90%);
-        --dark-bg:hsl(0, 0%, 93%);
-        --medium-bg:hsl(0, 5%, 81%);
-        --btn-keypad:hsl(185, 42%, 37%);
-        --shadow-btn:hsl(185, 58%, 25%);
-        --btn-equel: hsl(25, 98%, 40%);
-        --shadow-toggle-equel:hsl(25, 99%, 27%);
-        --key-num: hsl(30, 25%, 89%);
-        --key-num-shadow:hsl(28, 16%, 65%);
-        --key-color: hsl(60, 10%, 19%);
-        --base:hsl(60, 10%, 19%);
-        --base-text-equal:#fff;
-        --show-text:hsl(60, 10%, 19%);
-        --key-hover:#fff;
-    }
 }    

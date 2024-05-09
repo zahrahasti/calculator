@@ -4,7 +4,7 @@ import {errorText} from "@modules/errorText";
 import { DomElements } from "@ts/domEl";
 let {showTextResult,calculationComponents}=DomElements
 function calculate(txt:string) {
-    console.log(txt);
+    console.log("texty",txt);
     if(eval(removeLeadingZeros(`${txt}`))===Infinity){
       errorText("Can`t divide by zero");
       return;

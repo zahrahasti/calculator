@@ -10,9 +10,7 @@
     align-items: center;
     justify-content: center;
 }
-.text-sm{
-    font-size:1rem;
-}
+
 .rouned-sm{
     border-radius:var(--round-sm);
 }

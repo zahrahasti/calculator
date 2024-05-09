@@ -1,9 +1,9 @@
-
+//@ts-ignore
 import { DomElements } from "@ts/domEl";
 const {incorrectFormatWrapper}=DomElements
 let timer;
  function errorText(txt:string){
-    incorrectFormatWrapper.classList.add("hide")
+    incorrectFormatWrapper.classList.add("hide");
     incorrectFormatWrapper.querySelector("p").textContent=txt;     
   
    timer=setTimeout(
