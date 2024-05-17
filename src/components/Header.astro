@@ -14,7 +14,7 @@
               <small>3</small>
             </div>
             <div class="btn-theme container-theme-control">
-              <input type="range" min="2" max="12" step="5" value="2" />
+              <input class="input-theme" type="range" min="2" max="12" step="5" value="2" />
             </div>
           </div>
         </div>
@@ -24,15 +24,17 @@
 
   <script>
 const btnTheme = document.querySelector(".btn-theme input") as HTMLInputElement;
+const inputTheme=document.querySelector(".input-theme") as HTMLInputElement
 btnTheme.addEventListener("change", changeTheme);
   function changeTheme(e:Event) {
      
     document.body.classList.remove("style-1", "style-2", "style-3");
-    if (e.target.value === this.min)
+    
+    if (inputTheme.value === inputTheme.min)
       document.body.classList.add("style-1", "anim-opacity");
-    if (+e.target.value === +this.min + +this.step)
+    if (+inputTheme.value === +inputTheme.min + +inputTheme.step)
       document.body.classList.add("style-2", "anim-opacity");
-    if (e.target.value === "12")
+    if (inputTheme.value === "12")
       document.body.classList.add("style-3", "anim-opacity");
   }
   </script>

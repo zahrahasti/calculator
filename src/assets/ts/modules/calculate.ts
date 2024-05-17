@@ -9,7 +9,7 @@ function calculate(txt:string) {
       errorText("Can`t divide by zero");
       return;
     }
-   
+    //@ts-ignore
     if (isNaN(txt.at(-1))) errorText("Invalid format used")
      else {
       showTextResult.textContent = `${eval(removeLeadingZeros(`${txt}`))}`;

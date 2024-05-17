@@ -13,9 +13,11 @@
     "@astrojs/check": "^0.5.10",
     "@fontsource-variable/hanken-grotesk": "^5.0.21",
     "astro": "^4.6.3",
+    "browserslist": "^4.23.0",
     "typescript": "^5.4.5"
   },
   "devDependencies": {
+    "lightningcss": "^1.24.1",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0"
   }

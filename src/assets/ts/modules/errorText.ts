@@ -4,7 +4,8 @@ const {incorrectFormatWrapper}=DomElements
 let timer;
  function errorText(txt:string){
     incorrectFormatWrapper.classList.add("hide");
-    incorrectFormatWrapper.querySelector("p").textContent=txt;     
+    const incorrectFormatWrapperChild=incorrectFormatWrapper.querySelector("p") as HTMLParagraphElement
+      incorrectFormatWrapperChild.textContent=txt;     
   
    timer=setTimeout(
       () => {
