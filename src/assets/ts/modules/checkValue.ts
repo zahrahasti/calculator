@@ -6,15 +6,19 @@ let {btnSigns,showTextResult,calculationComponents,textString}=DomElements;
 import {removeDuplicateMathSign} from "@modules/removeDuplicateMathSign"
 function checkValue(e:Event) {
     btnSigns.forEach(sign=>{
-    if(showTextResult.textContent===sign.dataset.value){
+     if(showTextResult.textContent===sign.dataset.value){
           sign.classList.add("no-allow");
            delFirstChareacter()     
-    }})
+     }})
    const element=e.target as HTMLElement
   if (!element.classList.contains("no-allow")) {
     const value = element.dataset.value;
-     if(showTextResult.textContent!==null)
-    showTextResult.textContent += value;
+      if(showTextResult.textContent!==null ){
+       showTextResult.textContent += value;
+      if(showTextResult.textContent.length>=10) showTextResult.style.fontSize="14px"
+     
+    }
+   
   if(value!==undefined)
     calculationComponents.push(value);
     textString = calculationComponents.join("");

@@ -103,7 +103,7 @@
 .attribution {
     align-self:center;
     justify-content:flex-end;
-     margin-bottom:1rem;
+     margin-block:1rem;
    font-size: 11px; text-align: center; }
 .attribution a { color:var(--base); }
 }

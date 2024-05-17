@@ -4,13 +4,14 @@ import {errorText} from "@modules/errorText";
 import { DomElements } from "@ts/domEl";
 let {showTextResult,calculationComponents}=DomElements
 function calculate(txt:string) {
-    console.log(txt);
+   
     if(eval(removeLeadingZeros(`${txt}`))===Infinity){
       errorText("Can`t divide by zero");
       return;
     }
+    
     //@ts-ignore
-    if (isNaN(txt.at(-1))) errorText("Invalid format used")
+    if (isNaN(+txt.at(-1))) errorText("Invalid format used")
      else {
       showTextResult.textContent = `${eval(removeLeadingZeros(`${txt}`))}`;
       txt = showTextResult.textContent;
