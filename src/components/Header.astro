@@ -22,92 +22,10 @@
     </section>
   </header>
 
-  <script>
-const btnTheme = document.querySelector(".btn-theme input") as HTMLInputElement;
-const inputTheme=document.querySelector(".input-theme") as HTMLInputElement
-btnTheme.addEventListener("change", changeTheme);
-  function changeTheme(e:Event) {
-     
-    document.body.classList.remove("style-1", "style-2", "style-3");
-    
-    if (inputTheme.value === inputTheme.min)
-      document.body.classList.add("style-1", "anim-opacity");
-    if (+inputTheme.value === +inputTheme.min + +inputTheme.step)
-      document.body.classList.add("style-2", "anim-opacity");
-    if (inputTheme.value === "12")
-      document.body.classList.add("style-3", "anim-opacity");
-  }
-  </script>
-
+ 
 <style>
  
-.wrapper-top{
-    display: flex;
-    align-items: center;
-    justify-content:space-between;
-    margin-bottom:1.8rem;
-    color:var(--base);
-}
  
-.container-theme{
-     display: flex;
-     align-items: flex-end;
-     gap:0 2.5rem;
-    
-}
-.container-theme-num{
-    display: flex;
-    gap:1.5rem;
-    margin-right:.5rem;
-    margin-bottom:.5rem;
-  
-}
-.container-theme-control{
-    background:var(--medium-bg);
-    border:2px solid var(--medium-bg);
-    display: flex; 
-     padding:.3rem;
-    border-radius:1rem;
-    align-items: center;
-}
- 
- 
-.btn-theme{
-    cursor: pointer;
-    width: 100%;
-    padding:.4rem;
-    outline:none;
-    height:1.8rem;
-    cursor: pointer;
-    position: relative;
-}
-.btn-theme input{
-    position: absolute;
-    width:100%;
-    cursor: pointer;
-    appearance:none;
-    height:100%;
-    left:calc(var(--x) + 2px);
-    transform: translateX(calc( 0% - var(--x)));
-    background:transparent;
-    transition:all .3s;
-    border-radius:50%;
-    border:none;
-    outline:none;
-    }
-.btn-theme input::-webkit-slider-thumb{
-        background:var(--btn-equel);
-        appearance: none;
-        width: 1.3rem;
-        height: 1.3rem;
-        border-radius:100%;
-    }
-.btn-theme input::-webkit-slider-thumb:hover{
-        filter: brightness(1.2);
-        filter:contrast(.85);
-    }
-.btn-theme input:active,.btn-theme input:checked{
-        border:none;
-        outline:none;
-    }
 </style>
+
+<script type="module" src="/src/assets/ts/modules/changeTheme.ts"></script>

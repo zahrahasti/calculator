@@ -2,7 +2,7 @@
 import {removeLeadingZeros} from "@modules/removeLeadingZeros";
 import {errorText} from "@modules/errorText";
 import { DomElements } from "@ts/domEl";
-let {showTextResult,calculationComponents}=DomElements
+let {showTextResult,calculationComponents,btnEqual,keyPads,btnReset,btnDeleLastNum}=DomElements
 function calculate(txt:string) {
    
     if(eval(removeLeadingZeros(`${txt}`))===Infinity){
@@ -15,9 +15,25 @@ function calculate(txt:string) {
      else {
       showTextResult.textContent = `${eval(removeLeadingZeros(`${txt}`))}`;
       txt = showTextResult.textContent;
-      calculationComponents = [];
-      calculationComponents.push(txt);
+      // calculationComponents = [];
+      // calculationComponents.push(txt);
     }
   }
    export {calculate}
    
+    
+ 
+    import {delLastCharacter} from "@modules/delLastCharacter";
+     import {checkValue} from "@modules/checkValue";
+     import {resetText} from "@modules/resetText";
+    
+    btnReset.addEventListener("click", resetText);
+    btnDeleLastNum.addEventListener("click", delLastCharacter);
+      keyPads.forEach((key) => {
+      key.addEventListener("click",function(e:Event){ 
+        checkValue(e)
+       }
+      );
+       
+    });
+    btnEqual.addEventListener("click", () => calculate(showTextResult.textContent||""));
