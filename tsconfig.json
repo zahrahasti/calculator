@@ -1,13 +1,16 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "compilerOptions": {
+  "exclude": ["node_modules"],
+ "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.astro","tests/**/*.unit.test.ts", "tests/dom/removeNoAllowClass.test.ts"]
+, "compilerOptions": {
   "paths": {
-    // "@ts/*": ["/src/assets/ts/*"],
     "@styles/*": ["src/assets/styles/*"],
     "@components/*": ["src/components/*"],
 	"@ts/*": ["src/assets/ts/*"],
 	"@modules/*": ["src/assets/ts/modules/*"]
   },
+  "lib": ["es5", "dom"],
+  "types": ["astro/client", "vitest"],
   "baseUrl": ".",
 		"strict": true,
 		"noEmit": true,

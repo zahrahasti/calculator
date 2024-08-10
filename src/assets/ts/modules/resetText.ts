@@ -1,10 +1,11 @@
 
 import { DomElements } from "@ts/domEl";
-let {calculationComponents,showTextResult,textString}=DomElements
-function resetText() {
-    calculationComponents = [];
-    showTextResult.textContent = "";
-    textString = "";
+let {calOutput,operatorButtons}=DomElements
+ function resetText() {
+    calOutput.textContent = "";
+    operatorButtons.forEach(operator=>{
+      operator.classList.add("no-allow")
+    })
   }
 
 export {resetText}

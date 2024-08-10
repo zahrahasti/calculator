@@ -1,29 +1,27 @@
-
-
-import {delFirstChareacter} from "@modules/delFirstChareacter"
 import { DomElements } from "@ts/domEl";
-let {operatorButtons,showTextResult,calculationComponents,textString}=DomElements;
-import {removeDuplicateMathSign} from "@modules/removeDuplicateMathSign"
+let {calOutput}=DomElements;
+import {removeDuplicateMathSign} from "@modules/removeDuplicateMathSign";
+import { addNoAllowedToWriteOperator } from "./addNoAllowedToWriteOperator";
+
 function checkValue(e:Event) {
-  operatorButtons.forEach(sign=>{
-     if(showTextResult.textContent===sign.dataset.value){
-          sign.classList.add("no-allow");
-           delFirstChareacter()     
-     }})
+   if(calOutput.textContent===""){
+     addNoAllowedToWriteOperator()
+    }
+  addNoAllowedToWriteOperator()
    const element=e.target as HTMLElement
-  if (!element.classList.contains("no-allow")&& showTextResult.textContent!==null) {
+  if (!element.classList.contains("no-allow")&& calOutput.textContent!==null) {
     const value = element.dataset.value;
-        showTextResult.textContent += value;
-      if(showTextResult.textContent.length>=10) showTextResult.style.fontSize="14px"
-     if(showTextResult.textContent==="0")showTextResult.textContent=""
+    calOutput.textContent += value;
+      if(calOutput.textContent.length>=10) calOutput.style.fontSize="14px"
+      if(calOutput.textContent==="0")calOutput.textContent=""
+     
    
   if(value!==undefined)
 
-    if(showTextResult.textContent!==null)
-    removeDuplicateMathSign(showTextResult.textContent);
+    if(calOutput.textContent!==null)
+    removeDuplicateMathSign(calOutput.textContent);
   }
   
-  return textString;
 }
 
 export {checkValue}

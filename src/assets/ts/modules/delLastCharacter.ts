@@ -1,21 +1,17 @@
 import { DomElements } from "@ts/domEl";
-const operators=["+","-","*","/"]
-let {showTextResult,calculationComponents,operatorButtons}=DomElements;
-function delLastCharacter() { 
-    
-    if(showTextResult.textContent!==null){
-    const lastCharacter= showTextResult.textContent.slice(-1)
-    showTextResult.textContent =showTextResult.textContent.slice(0, -1);
-    
-    operators.forEach(operator=>{
-      if(operator===lastCharacter){
-         operatorButtons.forEach(el=>{
-          el.classList.remove("no-allow")
-         })
-      }
-    })
+import { checkAndRemoveNoAllowClass } from '@modules/checkAndRemoveNoAllowClass';
+ import {checkAndAddNoAllowClass} from "@modules/checkAndAddNoAllowClass";
+let {calOutput}=DomElements;
+ 
+function delLastCharacter(coutput:string|null) { 
+    if(coutput!==null){
+    const lastCharacter= coutput.slice(-1)
+    calOutput.textContent =coutput.slice(0, -1);
+     
+    checkAndAddNoAllowClass(coutput)
+    checkAndRemoveNoAllowClass(lastCharacter)
    }
-   calculationComponents.pop();
+   
  }
 
- export {delLastCharacter};
+ export {delLastCharacter,checkAndAddNoAllowClass };

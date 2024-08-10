@@ -3,6 +3,7 @@
 ---
  import IncorrectFormat from "./IncorrectFormat.astro"
 import KeyBtn from "./KeyBtn.astro";
+import Operator from "./OperatorBtn.astro";
  
 ---
  
@@ -10,21 +11,21 @@ import KeyBtn from "./KeyBtn.astro";
   <KeyBtn dataValue={7}/>
   <KeyBtn dataValue={8}/>
   <KeyBtn dataValue={9}/>
-    <button class="base-btn-class btn-hover btn-del">DEL</button>
+    <button class="base-btn-class btn-hover btn-del" data-cy="delete">DEL</button>
     <KeyBtn dataValue={4}/>
     <KeyBtn dataValue={5}/>
     <KeyBtn dataValue={6}/>
-    <button class="base-btn-class btn-key operator no-allow" data-value="+">+</button>
+    <Operator dataValue="+"/>
     <KeyBtn dataValue={1}/>
     <KeyBtn dataValue={2}/>
     <KeyBtn dataValue={3}/>
-    <button class="base-btn-class btn-key operator no-allow" data-value="-">-</button>
+    <Operator dataValue="-"/>
     <KeyBtn dataValue={"."}/>
     <KeyBtn dataValue={0}/>
-    <button class="base-btn-class btn-key operator no-allow" data-value="/">/</button>
-    <button class="base-btn-class btn-key operator no-allow" data-value="*">x</button>
-    <button class="base-btn-class btn-hover btn-reset">RESET</button>
-    <button class="base-btn-class btn-equel btn-hover">
+    <Operator dataValue="/"/>
+    <Operator dataValue="*"/>
+    <button data-testid="btn-reset" data-cy="reset" class="base-btn-class btn-hover btn-reset">RESET</button>
+    <button data-cy="btn-equal" class="base-btn-class btn-equel btn-hover">
       =
        <IncorrectFormat/>
  

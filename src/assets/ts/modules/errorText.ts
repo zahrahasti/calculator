@@ -1,11 +1,14 @@
-//@ts-ignore
+
 import { DomElements } from "@ts/domEl";
-const {incorrectFormatWrapper}=DomElements
-let timer;
- function errorText(txt:string){
+const {incorrectFormatWrapper,incorrectFormatWrapperChild}=DomElements
+let timer: ReturnType<typeof setTimeout>;
+
+type errorDevideByZero="Can`t divide by zero";
+type invalidFormatError="Invalid format used";
+ 
+ function errorText(errorTxt:errorDevideByZero|invalidFormatError){
     incorrectFormatWrapper.classList.add("hide");
-    const incorrectFormatWrapperChild=incorrectFormatWrapper.querySelector("p") as HTMLParagraphElement
-      incorrectFormatWrapperChild.textContent=txt;     
+    incorrectFormatWrapperChild.textContent=errorTxt;     
   
    timer=setTimeout(
       () => {

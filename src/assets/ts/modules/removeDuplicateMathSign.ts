@@ -1,19 +1,21 @@
 
 import {delLastCharacter} from "@modules/delLastCharacter"
+ import {removeNoAllowClass} from "@modules/removeNoAllowClass";
+import { addNoAllowClass } from "./addNoAllowClass";
+
 import { DomElements } from "@ts/domEl";
-let {operatorButtons}=DomElements
+const {calOutput}=DomElements
+function checkForRepeation(repeatDel:number){
+  repeatDel++;
+  if (repeatDel === 1) delLastCharacter(calOutput.textContent);
+}
 export function removeDuplicateMathSign(calculationComponents:string) {
 const consecutiveMathSigns = /(\d[+\-*/]{2,})/.test(calculationComponents);
 let repeatDel = 0;
 if (consecutiveMathSigns) {
-  operatorButtons.forEach((btn) => {
-    btn.classList.add("no-allow");
-    repeatDel++;
-    if (repeatDel === 1) delLastCharacter();
-  });
+  addNoAllowClass(checkForRepeation,repeatDel)
 } else {
-   
-  operatorButtons.forEach((btn) => btn.classList.remove("no-allow"));
+  removeNoAllowClass()
 }
 }
 
