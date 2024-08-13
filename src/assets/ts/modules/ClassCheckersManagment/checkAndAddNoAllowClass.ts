@@ -1,5 +1,5 @@
 
-  import { addNoAllowClass } from "./addNoAllowClass";
+  import { addNoAllowClass } from "../ClassManagement/addNoAllowClass";
 function checkAndAddNoAllowClass(txt:string){
     if(txt===""){
        addNoAllowClass();

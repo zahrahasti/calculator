@@ -1,7 +1,7 @@
 
 import {delLastCharacter} from "@modules/delLastCharacter"
- import {removeNoAllowClass} from "@modules/removeNoAllowClass";
-import { addNoAllowClass } from "./addNoAllowClass";
+ import {removeNoAllowClass} from "@ts/modules/ClassManagement/removeNoAllowClass";
+import { addNoAllowClass } from "./ClassManagement/addNoAllowClass";
 
 import { DomElements } from "@ts/domEl";
 const {calOutput}=DomElements

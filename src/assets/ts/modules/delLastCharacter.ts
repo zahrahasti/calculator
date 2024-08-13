@@ -1,6 +1,6 @@
 import { DomElements } from "@ts/domEl";
-import { checkAndRemoveNoAllowClass } from '@modules/checkAndRemoveNoAllowClass';
- import {checkAndAddNoAllowClass} from "@modules/checkAndAddNoAllowClass";
+import { checkAndRemoveNoAllowClass } from '@ts/modules/ClassCheckersManagment/checkAndRemoveNoAllowClass';
+ import {checkAndAddNoAllowClass} from "@ts/modules/ClassCheckersManagment/checkAndAddNoAllowClass";
 let {calOutput}=DomElements;
  
 function delLastCharacter(coutput:string|null) { 

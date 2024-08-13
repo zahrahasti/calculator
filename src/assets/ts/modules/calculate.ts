@@ -5,8 +5,8 @@ import { DomElements } from "@ts/domEl";
 let {calOutput,btnEqual,keyPads,btnReset,btnDeleLastNum}=DomElements
 export const errorDevideByZero="Can`t divide by zero";
 export const invalidFormatError="Invalid format used";
-function calculate(txt:string) {
-   
+function calculate(txt:string | null) {
+   if(txt)
     if(eval(removeLeadingZeros(`${txt}`))===Infinity){
       errorText(errorDevideByZero);
       return;
@@ -35,4 +35,4 @@ function calculate(txt:string) {
       );
     });
 
-  btnEqual.addEventListener("click", () => calculate(calOutput.textContent||""));
+  btnEqual.addEventListener("click", () => calculate(calOutput.textContent));
