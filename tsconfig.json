@@ -1,7 +1,7 @@
 {
   "extends": "astro/tsconfigs/strict",
   "exclude": ["node_modules"],
- "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.astro","tests/**/*.unit.test.ts", "tests/dom/removeNoAllowClass.test.ts"]
+ "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.astro","tests/*.test.ts"]
 , "compilerOptions": {
   "paths": {
     "@styles/*": ["src/assets/styles/*"],

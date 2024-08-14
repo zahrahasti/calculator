@@ -23,10 +23,4 @@ describe('removeNoAllowClass', () => {
       });
    });
 });
-
-it('update input', async () => {
-   const input = screen.getByRole('button')
-    expect(input).not.toBeNull()
-   console.log(input);
-   
- })
+ 

@@ -1,7 +1,6 @@
- 
-// checkAndRemoveNoAllowClass.test.ts
-import { describe, it, expect, beforeEach } from 'vitest';
-import { checkAndRemoveNoAllowClass } from '@modules/checkAndRemoveNoAllowClass';
+
+import {it, expect } from 'vitest';
+import { checkAndRemoveNoAllowClass } from '@modules/ClassCheckersManagment/checkAndRemoveNoAllowClass';
  
  
   it('should remove "no-allow" class from operator buttons if lastCharacter is an operator', () => {
