@@ -73,7 +73,7 @@ git clone -b master https://github.com/zahrahasti/calculator.git
 </p>
 
 ```sh
-npm i -g degit
+pnpm i -g degit
 
 degit https://github.com/zahrahasti/calculator.git new-project-folder
 ```
@@ -81,20 +81,20 @@ degit https://github.com/zahrahasti/calculator.git new-project-folder
 <p>2. Then, install required packages:</p>
 
 ```sh
-npm i
+pnpm i
 ```
 
 <p>3. Finally, run the <code>dev</code> script to start the dev server and locally preview the project in development mode:</p>
 
 ```sh
-npm run dev
+pnpm run dev
 ```
 
 <h2>Deployment and production</h2>
 <p>Before deploying the project or creating a new pull request, run the following commands and make sure there are no errors:</p>
 
 ```sh
-npm run format
+pnpm run format
 
-npm run build
+pnpm run build
 ```
