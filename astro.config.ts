@@ -6,7 +6,7 @@ export default defineConfig({
 	integrations: [
 		icon(),
 	],
-	base: 'calculator',
+	base: '/',
 	trailingSlash: 'ignore',
 	build: {
 		format: 'file',
