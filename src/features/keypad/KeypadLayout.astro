@@ -1,0 +1,31 @@
+---
+import DigitButton from "./components/DigitButton.astro";
+import { BUTTON_CONFIG } from "./config/buttonConfig";
+import { Icon } from "astro-icon/components";
+---
+
+<fieldset class="grid grid-cols-4 p-5 bg-panel-bg gap-4 w-full rounded-md">
+  {
+    BUTTON_CONFIG.map((button) => {
+      return (
+        <DigitButton
+          classStyle={button.class}
+          value={button.value}
+          id={button.id}
+        >
+          {button.type === "operator" ? (
+            <Icon name={button.iconName} class="text-bold" width="24" />
+          ) : (
+            button.label
+          )}
+        </DigitButton>
+      );
+    })
+  }
+</fieldset>
+
+<script>
+  import { InputValidator } from "./servises/InputValidator";
+  const calc = new InputValidator();
+  calc.init();
+</script>
