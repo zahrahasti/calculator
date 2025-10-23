@@ -1,3 +1,7 @@
 [build]
-  command = "pnpm run build"
+  base = "/"
+  command = "pnpm install && pnpm run build"
   publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "24.3.0"
